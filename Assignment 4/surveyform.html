@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    td {
+        border: 10px solid white;
+    }
+
+    table {
+        width: fit-content;
+    }
+</style>
+
+<body>
+
+    <div class="conatiner" style="background-color: rgb(19, 201, 201)">
+        <div style="text-align: center">
+            <h1>Survey form</h1>
+        </div>
+        <div class="col-md-10 col-sm-10 offset-1" style="background-color: white">
+
+            <div style="text-align: center">
+                <br>
+                Let us know how we can improve freeCodeCamp
+                <br><br>
+            </div>
+            <form class="form-inline">
+                <div class="offset-1">
+                    <table>
+                        <tr>
+                            <td align="right">*Name:</td>
+                            <td><input type="text" id="name" class="form-control" style="height:30px"
+                                    placeholder="Enter your Name" /></td>
+
+                        </tr>
+                        <tr>
+                            <td align="right">*Email:</td>
+                            <td><input type="email" id="email" type="email" class="form-control" style="height:30px"
+                                    placeholder="Enter your Email" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">*Age:</td>
+                            <td><input type="number" id="age" class="form-control" style="height:30px"
+                                    placeholder="Age" /></td>
+                        </tr>
+                        <tr>
+                            <td>Which option best describes your current role?</td>
+                            <td><select id="role" class="form-control" style="background-color: lightgray">
+                                    <option value="Student">
+                                        Student
+                                    </option>
+                                    <option value="Employee">
+                                        Employee
+                                    </option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td align="right">How likely would you recommend <br>freeCodeCamp to a friend?</td>
+                            <td>
+                                <br><input value="Definitely" name="rec" type="radio" />
+                                Definitely<br>
+                                <input value="Maybe" name="rec" type="radio" />
+                                Maybe<br>
+                                <input value="Not Sure" name="rec" type="radio" />
+                                Not Sure<br>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">What do you like most in FCC:</td>
+                            <td><select id="like" class="form-control" style="background-color: lightgray">
+                                    <option value="Select an option">
+                                        Select an option
+                                    </option>
+                                    <option value="Employee">
+                                        Employee
+                                    </option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: baseline" align="right">Things that should be improved in the
+                                future<br>(Check all that apply):</td>
+                            <td><input class="form-check-input" value="Front-end Projects" name="chk" type="checkbox">
+                                Front-end Projects<br>
+                                <input class="form-check-input" value="Back-end Projects" name="chk" type="checkbox">
+                                Back-end Projects<br>
+                                <input class="form-check-input" value="Data Visualization" name="chk" type="checkbox">
+                                Data Visualization<br>
+                                <input class="form-check-input" value="Challenges" name="chk" type="checkbox">
+                                Challenges<br>
+                                <input class="form-check-input" value="Open Source Community" name="chk"
+                                    type="checkbox">
+                                Open Source Community<br>
+                                <input class="form-check-input" value="Gitter Help Rooms" name="chk" type="checkbox">
+                                Gitter Help Rooms<br>
+                                <input class="form-check-input" value="Videos" name="chk" type="checkbox">
+                                Videos<br>
+                                <input class="form-check-input" value="City Meetups" name="chk" type="checkbox">
+                                City Meetups<br>
+                                <input class="form-check-input" value="Wiki" name="chk" type="checkbox">
+                                Wiki<br>
+                                <input class="form-check-input" value="Forum" name="chk" type="checkbox">
+                                Forum<br>
+                                <input class="form-check-input" value="Additional Courses" name="chk" type="checkbox">
+                                Additional Courses<br>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: baseline" align="right">Any Comments or Suggestions?</td>
+                            <td><textarea id="comments" class="form-control" placeholder="Enter your comments here..."
+                                    rows="4" cols="40"></textarea></td>
+                        </tr>
+                        <tfoot>
+                            <td colspan="2" align="center"><button type="button" data-target="#survey"
+                                    data-toggle="modal" onclick="myModal()" class="btn btn-primary">Submit</button></td>
+                        </tfoot>
+                    </table>
+                </div>
+            </form>
+            <div class="modal fade" id="survey" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Survey</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+
+                                    <h5>
+                                        Name
+                                    </h5>
+                                    <br>
+                                    <p id="mname"></p>
+                                    <br>
+                                </div>
+                                <div class="row">
+                                    <h5>
+                                        Email
+                                    </h5>
+                                    <br>
+                                    <p id="memail"></p>
+                                    <br>
+                                </div>
+                                <div class="row">
+
+                                    <h5>
+                                        Age
+                                    </h5>
+                                    <br>
+                                    <p id="mage"></p>
+                                    <br>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>
+                                            Current Role
+                                        </h5>
+                                        <p id="mrole"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>
+                                            Recommendation
+                                        </h5>
+                                        <p id="mrec"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>
+                                            Like
+                                        </h5>
+                                        <p id="mlike"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>
+                                            Improvements
+                                        </h5>
+                                        <p id="out"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5>
+                                            Comments
+                                        </h5>
+                                        <p id="mcomments"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div><br><br>
+        <script>
+            function myModal() {
+                document.getElementById("mname").innerHTML = document.getElementById("name").value;
+                document.getElementById("memail").innerHTML = document.getElementById("email").value;
+                document.getElementById("mage").innerHTML = document.getElementById("age").value;
+                document.getElementById("mrole").innerHTML = document.getElementById("role").value;
+                var recom = document.getElementsByName("rec");
+                recom.forEach(element => {
+                    if (element.checked) {
+                        document.getElementById("mrec").innerHTML = element.value;
+                    }
+                });
+                document.getElementById("mlike").innerHTML = document.getElementById("like").value;
+                var improv = document.getElementsByName("chk");
+                improv.forEach(x => {
+                    if (x.checked) {
+                        document.getElementById("out").innerHTML += x.value + "<br>";
+                    }
+                });
+                document.getElementById("mcomments").innerHTML = document.getElementById("comments").value;
+                console.log(document.getElementById("mcomments").value);
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
